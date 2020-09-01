@@ -30,7 +30,11 @@ var getUserRepos = function (user) {
         } else {
             alert("Error: " + response.statusText);
         }
-    });
+    })
+        .catch(function (error) {
+            //notice this '.catch()' getting chained onto the end of the '.then()' method
+            alert("unable to connect to GitHub");
+        });
 };
 
 var displayRepos = function (repos, searchTerm) {
